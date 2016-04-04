@@ -1,1 +1,126 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+    <link rel="stylesheet" href="main.css">
+	
+	<!--charset UTF-8 se foloseste pentru a vedea diacriticile.-->
+	<meta charset="UTF-8">
+	
+    <title>Sauna Lider SRL</title>
+	
+	<!--Zoom on click for images, javascript, source = http://www.dwuser.com/education/content/click-to-zoom-for-photos-adding-lightbox-effect-to-your-images/-->
+	<link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+    <style type="text/css">
+    a.fancybox img {
+        border: none;
+        box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+        -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+    } 
+    a.fancybox:hover img {
+        position: relative; z-index: 999; -o-transform: scale(1.03,1.03); -ms-transform: scale(1.03,1.03); -moz-transform: scale(1.03,1.03); -webkit-transform: scale(1.03,1.03); transform: scale(1.03,1.03);
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="#">Acasă</a></li>
+          <li><a href="#">Servicii</a></li>
+        </ul>
+        <ul class="pull-right">
+          <li><a href="#">Locația</a></li>
+          <li><a href="#">Contacte</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Saună Finlandeză</h1>
+        <p>Relaxare fizică și mentală, creșterea rezistenței organismului la infecții, revitalizarea pielii și nu în ultimul rînd - ridicarea dispoziției.</p>
+		<a href="#">Află mai multe</a>
+      </div>
+    </div> 
+    <div class="neighborhood-guides">
+        <div class="container">
+            <h2>Serviciile Lider</h2>
+            <p>Saună, bazin, cameră de odihnă, biliard, karaoke, mături de stejar și căldare de saună.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img class="fancybox" src="http://i.imgur.com/vZKvcKZ.jpg" data-big="http://i.imgur.com/UT1ovyG.jpg">
+                    </div>
+                    <div class="thumbnail">
+                        <img class="fancybox" src="http://i.imgur.com/r6dm5Rc.jpg" data-big="http://i.imgur.com/I9VG5UU.jpg">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img class="fancybox" src="http://i.imgur.com/NfNqO9a.jpg" data-big="http://i.imgur.com/Txv6KYm.jpg">
+                    </div>
+                    <div class="thumbnail">
+                        <img class="fancybox" src="http://i.imgur.com/yERCW8J.jpg" data-big="http://i.imgur.com/VrmV5AP.jpg">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img class="fancybox" src="http://i.imgur.com/hHSbw8i.jpg" data-big="http://i.imgur.com/QdnMuUJ.jpg">
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="learn-more">
+	  <div class="container">
+		<div class="row">
+	      <div class="col-md-4">
+			<h3>Travel</h3>
+			<p>From apartments and rooms to treehouses and boats: stay in unique spaces in 192 countries.</p>
+			<p><a href="#">See how to travel on Airbnb</a></p>
+	      </div>
+		  <div class="col-md-4">
+			<h3>Host</h3>
+			<p>Renting out your unused space could pay your bills or fund your next vacation.</p>
+			<p><a href="#">Learn more about hosting</a></p>
+		  </div>
+		  <div class="col-md-4">
+			<h3>Trust and Safety</h3>
+			<p>From Verified ID to our worldwide customer support team, we've got your back.</p>
+			<p><a href="#">Learn about trust at Airbnb</a></p>
+		  </div>
+	    </div>
+	  </div>
+	</div>
+	
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+    <script type="text/javascript">
+        $(function($){
+            var addToAll = false;
+            var gallery = true;
+            var titlePosition = 'inside';
+            $(addToAll ? 'img' : 'img.fancybox').each(function(){
+                var $this = $(this);
+                var title = $this.attr('title');
+                var src = $this.attr('data-big') || $this.attr('src');
+                var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+                $this.wrap(a);
+            });
+            if (gallery)
+                $('a.fancybox').attr('rel', 'fancyboxgallery');
+            $('a.fancybox').fancybox({
+                titlePosition: titlePosition
+            });
+        });
+        $.noConflict();
+    </script>
+  </body>
+</html>
